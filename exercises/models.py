@@ -11,7 +11,7 @@ from django.db import models
 
 class Exercise(models.Model):
     name = models.TextField()
-    about = models.TextField()
+    about = models.TextField(default='')
     class Bodyparts(models.TextChoices):
         CHEST = 'CH', 'Chest'
         LOWER_BACK = 'LB' 'Lowerback'
@@ -26,6 +26,8 @@ class Exercise(models.Model):
         choices = Bodyparts.choices,
         default = Bodyparts.CHEST
     )
+    def _str_(self):
+        return self.name
 
 
 
