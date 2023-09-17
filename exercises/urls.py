@@ -8,3 +8,4 @@ urlpatterns = [
     path('exercises/<int:pk>/', views.ExerciseDetail.as_view()),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)
+
