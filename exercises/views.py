@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import HttpResponse, render
+
 from .forms import ExerciseForm
+
+
 def exercise_view(request):
     if request.method == "POST":
         form = ExerciseForm(request.POST)

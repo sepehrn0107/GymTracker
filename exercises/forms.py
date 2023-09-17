@@ -1,9 +1,9 @@
-from django.forms import ModelForm
+from django import forms
 from .models import Exercise
 
 
-class ExerciseForm(ModelForm):
-    
+class ExerciseForm(forms.Form):
+
     class Meta:
         model = Exercise
         fields = ['name', 'about', 'body_part', 'user_gear']

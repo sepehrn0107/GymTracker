@@ -1,5 +1,5 @@
-# from django.contrib import admin
-# from .models import Exercise
+from django.contrib import admin
+from .models import Exercise
 # from .forms import ExerciseForm, CustomAddExerciseform
 
 # class ExerciseAdmin(admin.ModelAdmin):
@@ -12,5 +12,5 @@
 #         defaults.update(kwargs)
 #         return super().get_form(request, obj, **defaults)
 
-# admin.site.register(Exercise, ExerciseForm)
+admin.site.register(Exercise)
 # Register your models here.
