@@ -1,17 +1,9 @@
 from django.db import models
-#import uuid
+import uuid
 
-# BODY_PART_CHOISES = [
-#     (CHEST, 'Chest'),
-#     (LOWER_BACK,'Lowerback'),
-#     (UPPER_BACK, 'Upperback'),
-#     (LEGS, 'Legs'),
-#     (CORE, 'Core'),
-#     (ARMS, 'Arms')
-# ]
 
 class Exercise(models.Model):
-    # exercise_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    exercise_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.TextField(max_length=60, default="")
     about = models.TextField(default='')
     class Bodyparts(models.TextChoices):
