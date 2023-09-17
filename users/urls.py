@@ -1,6 +1,4 @@
-from django.urls import path
+from django.urls import re_path
 from django.urls import include
 
-urlpatterns = [
-    path("rest-auth/", include("rest_auth.urls")),
-]
+urlpatterns = [re_path(r"^rest-auth/", include("exarth_rest_auth.urls"))]

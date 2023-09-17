@@ -1,16 +1,17 @@
 from datetime import timezone
+import datetime
 from django.db import models
-
+from users.models import CustomUser
 from exercises.models import Exercise
 
 
 class Workout(models.Model):
-    owner = models.ForeignKey("User", default=1, on_delete=models.DO_NOTHING)
+    owner = models.ForeignKey(CustomUser, default=1, on_delete=models.DO_NOTHING)
     title = models.TextField(default="", max_length=30)
     note = models.TextField(default="", max_length=200)
-    start_date = models.DateTimeField()
+    start_date = models.DateTimeField(default=datetime.datetime.now)
     end_date = models.DateTimeField(blank=True)
-    exercises = models.ManyToManyField(Exercise, through="WorkoutExercise")
+    exercises = models.ManyToManyField(Exercise, through="WorkoutExercise", default="")
 
     def __str__(self):
         return self.title
