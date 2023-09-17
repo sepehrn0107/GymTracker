@@ -1,9 +1,6 @@
-from django.contrib import admin
 from django.urls import path
-
-# from .views import sign_in, sign_up
+from django.urls import include
 
 urlpatterns = [
-    #     path('sign-in', sign_in ),
-    #     path('sign-up', sign_up ),
+    path("rest-auth/", include("rest_auth.urls")),
 ]
