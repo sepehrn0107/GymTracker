@@ -10,11 +10,14 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     list_display = (
+        "username",
         "email",
+        "name",
         "date_of_birth",
         "gender",
         "is_staff",
         "is_active",
+        "date_joined",
     )
     list_filter = (
         "email",
@@ -26,7 +29,9 @@ class CustomUserAdmin(UserAdmin):
             None,
             {
                 "fields": (
+                    "username",
                     "email",
+                    "name",
                     "date_of_birth",
                     "gender",
                     "password",
