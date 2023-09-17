@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
 
-from . import views
+from exercises import views
 
 urlpatterns = [
-    path('exercises', views.exercise_view, name="exercise_view" )
+    path('exercises/', views.ExerciseList.as_view()),
+    path('exercises/<int:pk>/', views.ExerciseDetail.as_view()),
 ]

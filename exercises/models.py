@@ -1,4 +1,5 @@
 from django.db import models
+#import uuid
 
 # BODY_PART_CHOISES = [
 #     (CHEST, 'Chest'),
@@ -10,6 +11,7 @@ from django.db import models
 # ]
 
 class Exercise(models.Model):
+    # exercise_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.TextField(max_length=60, default="")
     about = models.TextField(default='')
     class Bodyparts(models.TextChoices):
@@ -41,6 +43,3 @@ class Exercise(models.Model):
     def _str_(self):
         return self.name
 
-
-
-# Create your models here.
