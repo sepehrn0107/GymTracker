@@ -33,8 +33,17 @@ note: This project uses mongodb Atlas. in order to connect to database, develope
 -   **utils/**: Houses helper functions used throughout the application.
 
 ### .env
-This project utilizes dotenv in order to manage secrets to avoid hard coding. for backend, the .env file should be in backend folder with these variables:
+This project utilizes dotenv in order to manage secrets to avoid hard coding. for backend, the .env file should be in backend folder with these variables. Note: SMTP not yet implemented
 
     MONGO_DB_URI="mongodb+srv://dbAdmin:<PASSWORD>@gymtracker.5bhmp.mongodb.net/"
     NODE_ENV=development
     PORT=5000
+    
+    JWT="YOUR_JWT_ACCESS_TOKEN"
+    JWT_REFRESH="YOUR_JWT_REFRESH_TOKEN"
+    SMTP_PORT=
+    SMTP_SERVICE=
+    SMTP_MAIL=
+    SMTP_PASSWORD=
+    
+    
