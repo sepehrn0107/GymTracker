@@ -10,7 +10,19 @@ export const validateEnv = () => {
       return {
         port: +envVars.PORT,
         env: envVars.NODE_ENV,
-        MONGO_DB_URI: envVars.MONGO_DB_URI
+        MONGO_DB_URI: envVars.MONGO_DB_URI,
+        jwtconfig: {
+          accessSecret: envVars.JWT,
+          refreshaccessSecret: envVars.JWT_REFRESH,
+        },
+        //TODO: Email verification
+        // smtp: {
+        //   host: envVars.SMTP_HOST,
+        //   port: envVars.SMTP_PORT,
+        //   service: envVars.SMTP_SERVICE,
+        //   mail: envVars.SMTP_MAIL,
+        //   password: envVars.SMTP_PASSWORD,
+        // },
       };
     } catch (error) {
       let message = undefined;
