@@ -6,7 +6,7 @@ Application to track workouts
 navigate to backend folder and run following command to install needed dependencies and run server: 
 
     npm install && npm start
-note: This project uses mongodb Atlas. in order to connect to database, developers need to be added as developer 
+note: This project uses mongodb Atlas. in order to connect to database, developers need to be added to database. contact repo owner
 
 ### Project Structure
 
@@ -22,6 +22,12 @@ note: This project uses mongodb Atlas. in order to connect to database, develope
 
 -   **errors/**: Contains error handling middleware.
 
+-   **loader/**: Contains app.ts and bootstrap.
+
+-   **logs/**: Contains logs from morgan & Winston.
+
+-   **mails/**: Contains email shell, example OTP email structure.
+
 -   **interface/**: Stores Typescript interfaces for MongoDB models
 
 -   **middleware/**: Houses middleware functions such as JWT authentication.
@@ -29,6 +35,8 @@ note: This project uses mongodb Atlas. in order to connect to database, develope
 -   **models/**: Contains MongoDB models.
 
 -   **Services**/: This are functions that communicate to our database
+
+-   **subscriber**/: 
 
 -   **utils/**: Houses helper functions used throughout the application.
 

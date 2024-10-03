@@ -16,13 +16,13 @@ export const validateEnv = () => {
           refreshaccessSecret: envVars.JWT_REFRESH,
         },
         //TODO: Email verification
-        // smtp: {
-        //   host: envVars.SMTP_HOST,
-        //   port: envVars.SMTP_PORT,
-        //   service: envVars.SMTP_SERVICE,
-        //   mail: envVars.SMTP_MAIL,
-        //   password: envVars.SMTP_PASSWORD,
-        // },
+        smtp: {
+          host: envVars.SMTP_HOST,
+          port: envVars.SMTP_PORT,
+          service: envVars.SMTP_SERVICE,
+          mail: envVars.SMTP_MAIL,
+          password: envVars.SMTP_PASSWORD,
+        },
       };
     } catch (error) {
       let message = undefined;
