@@ -101,6 +101,7 @@ Services provide CRUD operations to the model and exports these functions to be 
     
 #### Controller (src/controller)
 Main function of controllers are to handle requests from client. controllers use CRUD operations from Services to create functions to be used in endpoints.
+
     //@desc signup
     //@method POST
     //@access public
