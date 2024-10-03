@@ -107,7 +107,7 @@ Main function of controllers are to handle requests from client. controllers use
     //@access public
     export const registerExample = asyncHandler(async (req: Request<object, object, registerExampleInput>, res: Response) => {
         const { name } = req.body
-        await findAllExample({
+        await createExample({
             ...req.body,
             ...
         });
