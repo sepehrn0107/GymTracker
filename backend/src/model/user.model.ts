@@ -39,10 +39,10 @@ const userSchema = new Schema<IUser>({
         type: String,
         select: true,
         },
-    role: {
-        type: Schema.Types.ObjectId,
-        ref: 'Role',
-        required: [true, 'Role is required'],
-        },
+    // role: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Role',
+    //     required: [true, 'Role is required'],
+    //     },
 }, {timestamps: true});
 export default model<IUser>('User', userSchema)

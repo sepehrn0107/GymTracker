@@ -1,0 +1,9 @@
+ GET /api/auth/register 404 20.089 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 19:28:32 GMT 
+ POST /api/auth/register 201 118.316 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 19:29:22 GMT
+ POST /api/auth/register 201 131.449 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 19:31:45 GMT
+ POST /api/auth/register 201 127.372 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 19:34:43 GMT
+ POST /api/auth/register 201 1298.014 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:01:19 GMT
+ POST /api/auth/register 201 1025.753 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:01:57 GMT
+ POST /api/auth/register 500 58.213 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:28:25 GMT 
+ POST /api/auth/register 500 37.022 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:28:49 GMT 
+ POST /api/auth/register 201 165.977 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:29:15 GMT

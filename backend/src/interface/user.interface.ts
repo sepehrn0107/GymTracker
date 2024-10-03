@@ -1,5 +1,5 @@
 import {Document, Schema} from 'mongoose';
-import { IRole } from './roles.interface';
+// import { IRole } from './roles.interface';
 export interface IUser extends Document {
     email: string;
     name: string;
@@ -8,5 +8,5 @@ export interface IUser extends Document {
     OTPCode?: string;
     OTPCodeExpires?: number;
     passwordResetCode?: string;
-    role: IRole; // Reference to the Role model
+    // role: IRole; // Reference to the Role model
   }

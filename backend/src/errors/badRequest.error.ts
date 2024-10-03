@@ -1,6 +1,6 @@
 import CustomAPIError, { ErrorCode } from './custom.errors'
 
-class BadRequestError extends CustomAPIError {
+class badRequestError extends CustomAPIError {
   statusCode: number;
   constructor(message: string, errorCode: ErrorCode) {
     super(message, errorCode, 400, null);
@@ -8,4 +8,4 @@ class BadRequestError extends CustomAPIError {
   }
 }
 
-export default BadRequestError;
+export default badRequestError;
