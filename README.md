@@ -53,5 +53,62 @@ This project utilizes dotenv in order to manage secrets to avoid hard coding. fo
     SMTP_SERVICE=
     SMTP_MAIL=
     SMTP_PASSWORD=
+
+### Get started developing
+This sections describes how to create a new model, interface, CRUD operations & API endpoint.
+
+#### Model & Interface (src/model & src/interface) 
+Create a model. This will be a model in the database describing how the data is structures. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
+https://mongoosejs.com/docs/guide.html
+
+    const exampleSchema = new Schema<IExample>({
+        name: {
+            type: String,
+            ...
+        }
+    });
+    export default model<IExample>('Example', exampleSchema)
+
+In order to utilize Typescript, each model should use an Interface to define the values and types. Interface should be declared in src/interface. the naming convention is model.interface.ts.
+
+    export interface IExample extends Document {
+        name: string,
+        ...
+    };
+
+#### Validation (src/validation)
+in order to validate incoming data, zod (https://zod.dev/). Zod ensures all user data adheres to the defined rules, helping catch bugs and potential issues before they become critical.
+
+    export const createExampleSchema = object({
+        body: object({
+            name: string({ required_error: "name is required" })
+        }),
+    });
+    export type registerExampleInput = TypeOf<typeof createExampleSchema>["body"]
+
+
+#### Services (src/services)
+Services provide CRUD operations to the model and exports these functions to be used in the application.
+
+    export async function createExample(userData: Partial<IExample>) {
+        try {
+            const result = await ExampleModel.create(userdata);
+            return {data: null, success: true}
+        } catch (error) {
+            return{data: null, success: false, error}
+        }
+    };
     
-    
+#### Controller (src/controller)
+Main function of controllers are to handle requests from client. controllers use CRUD operations from Services to create functions to be used in endpoints.
+    //@desc signup
+    //@method POST
+    //@access public
+    export const registerExample = asyncHandler(async (req: Request<object, object, registerExampleInput>, res: Response) => {
+        const { name } = req.body
+        await findAllExample({
+            ...req.body,
+            ...
+        });
+        res.status(201).json({ success: true, message: 'created new Example'});
+    });
