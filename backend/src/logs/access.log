@@ -12,3 +12,5 @@
  POST /api/auth/register 201 152.568 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:50:48 GMT
  POST /api/auth/register 201 1156.243 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:52:47 GMT
  POST /api/auth/activate 201 80.278 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:53:27 GMT
+ POST /api/auth/register 201 183.791 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:58:45 GMT
+ POST /api/auth/activate 201 85.843 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:59:14 GMT
