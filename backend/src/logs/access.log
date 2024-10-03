@@ -7,3 +7,8 @@
  POST /api/auth/register 500 58.213 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:28:25 GMT 
  POST /api/auth/register 500 37.022 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:28:49 GMT 
  POST /api/auth/register 201 165.977 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:29:15 GMT
+ POST /api/auth/register 201 146.342 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:46:00 GMT
+ POST /api/auth/activate 201 85.038 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:48:17 GMT
+ POST /api/auth/register 201 152.568 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:50:48 GMT
+ POST /api/auth/register 201 1156.243 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:52:47 GMT
+ POST /api/auth/activate 201 80.278 ms PostmanRuntime/7.42.0 Thu, 03 Oct 2024 20:53:27 GMT
