@@ -9,7 +9,24 @@ export default tseslint
   .config(
     { ignores: ["dist"] },
     {
-      extends: [js.configs.recommended, ...tseslint.configs.recommended],
+      extends: [
+        js.configs.recommended,
+        ...tseslint.configs.recommended,
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:react-hooks/recommended",
+        "prettier",
+      ],
+      ignorePatterns: ["dist", ".eslintrc.cjs"],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: ["./tsconfig.json", "./tsconfig.node.json"],
+        tsconfigRootDir: __dirname,
+      },
       files: ["**/*.{ts,tsx}"],
       languageOptions: {
         ecmaVersion: 2020,
