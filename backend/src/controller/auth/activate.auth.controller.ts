@@ -19,11 +19,6 @@ export const activateUser = asyncHandler(
       { select: "+password +OTPCode +OTPCodeExpires" }
     );
 
-    const user3 = await findUser(
-      { email },
-      { select: "+password +OTPCode +OTPCodeExpires" }
-    );
-
     if (!user)
       throw new badRequestError("User does not exist", ErrorCode.BAD_REQUEST);
     if (user.isActive)
