@@ -8,7 +8,7 @@ const getIPFormat = () => (nodeEnv === "production" ? ":remote-addr - " : "");
 
 const accessLogStream = createWriteStream(
   path.join(__dirname, "..", "logs/access.log"),
-  { flags: "a" },
+  { flags: "a" }
 );
 
 const successResponseFormat = `${getIPFormat()} :method :url :status :response-time ms :user-agent :date`;
@@ -20,6 +20,7 @@ const successHandler = morgan(successResponseFormat, {
 const errorResponseFormat = `${getIPFormat()} :method :url :status :response-time ms :user-agent :date `;
 const errorHandler = morgan(errorResponseFormat, {
   stream: accessLogStream,
+
   skip: (req, res) => res.statusCode < 400,
 });
 

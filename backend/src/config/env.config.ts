@@ -15,6 +15,7 @@ export const validateEnv = () => {
         accessSecret: envVars.JWT,
         refreshaccessSecret: envVars.JWT_REFRESH,
       },
+
       //TODO: Email verification
       smtp: {
         host: envVars.SMTP_HOST,
