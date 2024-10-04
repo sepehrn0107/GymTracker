@@ -1,4 +1,4 @@
-import CustomAPIError, { ErrorCode } from './custom.errors'
+import CustomAPIError, { ErrorCode } from "./custom.errors";
 
 class badRequestError extends CustomAPIError {
   statusCode: number;

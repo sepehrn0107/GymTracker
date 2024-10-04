@@ -1,48 +1,51 @@
-import {Schema, model} from 'mongoose'
-import { IUser } from '../interface/user.interface'
+import { Schema, model } from "mongoose";
+import { IUser } from "../interface/user.interface";
 
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema<IUser>(
+  {
     email: {
-        type: String,
-        required: [true, 'Email is required'],
-        unique: true,
-        validate: {
-            validator: function(v: string) {
-                return /\S+@\S+\.\S+/.test(v);
-            },
-            message: props => `${props.value} is not a valid email address!`
+      type: String,
+      required: [true, "Email is required"],
+      unique: true,
+      validate: {
+        validator: function (v: string) {
+          return /\S+@\S+\.\S+/.test(v);
         },
+        message: (props) => `${props.value} is not a valid email address!`,
+      },
     },
     name: {
-        type: String,
-        required: [true, 'Name is required']
+      type: String,
+      required: [true, "Name is required"],
     },
     password: {
-        type: String,
-        minlength: [6, 'Password should have at least 6 characters'],
-        required: [true, 'Password is required'],
-        select: false,
-      },
+      type: String,
+      minlength: [6, "Password should have at least 6 characters"],
+      required: [true, "Password is required"],
+      select: false,
+    },
     isActive: {
-        type: Boolean,
-        default: false,
-        },
+      type: Boolean,
+      default: false,
+    },
     OTPCode: {
-        type: String,
-        select: false,
-        },
+      type: String,
+      select: false,
+    },
     OTPCodeExpires: {
-        type: Number,
-        select: false,
-        },
+      type: Number,
+      select: false,
+    },
     passwordResetCode: {
-        type: String,
-        select: true,
-        },
+      type: String,
+      select: true,
+    },
     // role: {
     //     type: Schema.Types.ObjectId,
     //     ref: 'Role',
     //     required: [true, 'Role is required'],
     //     },
-}, {timestamps: true});
-export default model<IUser>('User', userSchema)
+  },
+  { timestamps: true }
+);
+export default model<IUser>("User", userSchema);
