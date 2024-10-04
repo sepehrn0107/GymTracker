@@ -16,21 +16,27 @@ export const activateUser = asyncHandler(
     // Find user by email
     const user = await findUser(
       { email },
-      { select: "+password +OTPCode +OTPCodeExpires" },
+      { select: "+password +OTPCode +OTPCodeExpires" }
     );
+
+    const user3 = await findUser(
+      { email },
+      { select: "+password +OTPCode +OTPCodeExpires" }
+    );
+
     if (!user)
       throw new badRequestError("User does not exist", ErrorCode.BAD_REQUEST);
     if (user.isActive)
       throw new badRequestError(
         "User has already been verified",
-        ErrorCode.BAD_REQUEST,
+        ErrorCode.BAD_REQUEST
       );
 
     // Validate OTP code
     if (user.OTPCode !== OTPCode || user.OTPCodeExpires < Date.now()) {
       throw new badRequestError(
         "Invalid or expired OTP code",
-        ErrorCode.BAD_REQUEST,
+        ErrorCode.BAD_REQUEST
       );
     }
 
@@ -46,5 +52,5 @@ export const activateUser = asyncHandler(
     await user.save();
 
     res.status(201).json({ message: "Verified successfully", success: true });
-  },
+  }
 );
