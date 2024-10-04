@@ -7,6 +7,6 @@ const roleSchema = new Schema<IRole>(
     permissions: [{ type: String, required: true }], // List of permissions, e.g., ['VIEW_ORDERS', 'MANAGE_INVENTORY']
     grantAll: { type: Boolean, default: false },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 export default model<IRole>("Role", roleSchema);

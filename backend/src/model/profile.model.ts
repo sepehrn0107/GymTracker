@@ -40,7 +40,7 @@ const profileSchema = new Schema<IProfile>(
       index: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default model<IProfile>("Profile", profileSchema);

@@ -20,7 +20,7 @@ export async function findUserByEmail(email: string) {
 
 export async function findUser(
   query: FilterQuery<IUser>,
-  options: QueryOptions = { lean: true }
+  options: QueryOptions = { lean: true },
 ): Promise<IUser | null> {
   return await UserModel.findOne(query, {}, options);
 }
@@ -37,7 +37,7 @@ export async function createUser(userData: Partial<IUser>) {
 export async function updateUserById(
   id: string,
   update: UpdateQuery<IUser>,
-  options: QueryOptions = { new: true }
+  options: QueryOptions = { new: true },
 ) {
   try {
     const result = await UserModel.findByIdAndUpdate(id, update, options);

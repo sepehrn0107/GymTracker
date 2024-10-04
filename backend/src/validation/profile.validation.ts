@@ -5,7 +5,7 @@ export const createProfileSchema = object({
     lastName: string().optional(),
     age: number().min(0, { message: "Age cannot be negative" }).optional(),
     email: string({ required_error: "Email is required" }).email(
-      "Invalid email format"
+      "Invalid email format",
     ),
     weight: number().min(0, { message: "Age cannot be negative" }).optional(),
     height: number().min(0, { message: "Age cannot be negative" }).optional(),

@@ -16,7 +16,7 @@ export async function findRoleByName(name: string) {
 
 export async function findRole(
   query: FilterQuery<IRole>,
-  options: QueryOptions = { lean: true }
+  options: QueryOptions = { lean: true },
 ): Promise<IRole | null> {
   return await RoleModel.findOne(query, {}, options);
 }
@@ -37,7 +37,7 @@ export async function deleteRoleById(id: string) {
 export async function updateRoleById(
   id: string,
   update: UpdateQuery<IRole>,
-  options: QueryOptions = { new: true }
+  options: QueryOptions = { new: true },
 ) {
   try {
     const result = await RoleModel.findByIdAndUpdate(id, update, options);

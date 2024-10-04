@@ -25,7 +25,7 @@ type ExtendedUser = IUser & {
 export const AuthJWT = (
   req: IUserMessage,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   try {
     const jwtconfig = validateEnv()?.jwtconfig;
@@ -33,12 +33,12 @@ export const AuthJWT = (
     if (!token)
       throw new UnAuthenticatedError(
         "Provide token",
-        ErrorCode.TOKEN_NOT_FOUND
+        ErrorCode.TOKEN_NOT_FOUND,
       );
     jwt.verify(token, jwtconfig?.accessSecret, async (err, decoded) => {
       if (err)
         return next(
-          new ForbiddenError("Token expires", ErrorCode?.TOKEN_EXPIRE)
+          new ForbiddenError("Token expires", ErrorCode?.TOKEN_EXPIRE),
         );
       const decodeData = decoded as UserDataType;
       const userWithPermission = await findExtendedUsers(decodeData?.userId);

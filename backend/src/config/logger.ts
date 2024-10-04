@@ -12,7 +12,7 @@ export const logger = createLogger({
   format: combine(
     timestamp(),
     winstonFormat,
-    nodeEnv === "development" ? colorize() : uncolorize()
+    nodeEnv === "development" ? colorize() : uncolorize(),
   ),
   transports: [new transports.Console()],
 });

@@ -46,6 +46,6 @@ const userSchema = new Schema<IUser>(
     //     required: [true, 'Role is required'],
     //     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 export default model<IUser>("User", userSchema);

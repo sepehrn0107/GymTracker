@@ -5,7 +5,7 @@ const errorHandlerMiddleware = (
   err: any,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   const defaultError = {
     statusCode: err.statusCode || 500,

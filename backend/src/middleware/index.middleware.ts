@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from "express";
 export function notFoundMiddleware(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   res.status(404);
   const error = new Error(`🔍 - Not Found - ${req.originalUrl}`);
@@ -15,7 +15,7 @@ export function errorHandlerMiddleware(
   err: Error,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
   res.status(statusCode);

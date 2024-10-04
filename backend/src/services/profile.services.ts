@@ -22,7 +22,7 @@ export async function findProfileById(id: string) {
 
 export async function findProfile(
   query: FilterQuery<IProfile>,
-  options: QueryOptions = { lean: true }
+  options: QueryOptions = { lean: true },
 ): Promise<IProfile | null> {
   return await ProfileModel.findOne(query, {}, options);
 }
@@ -43,7 +43,7 @@ export async function deleteProfileById(id: string) {
 export async function updateProfileById(
   id: string,
   update: UpdateQuery<IProfile>,
-  options: QueryOptions = { new: true }
+  options: QueryOptions = { new: true },
 ) {
   try {
     const result = await ProfileModel.findByIdAndUpdate(id, update, options);

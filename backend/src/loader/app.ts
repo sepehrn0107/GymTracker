@@ -31,7 +31,7 @@ export const bootstrapExpress = (app: any) => {
         objectSrc: ["'none'"],
         upgradeInsecureRequests: [],
       },
-    })
+    }),
   );
   app.use(cors());
   app.use(express.json());

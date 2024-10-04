@@ -8,7 +8,7 @@ const getIPFormat = () => (nodeEnv === "production" ? ":remote-addr - " : "");
 
 const accessLogStream = createWriteStream(
   path.join(__dirname, "..", "logs/access.log"),
-  { flags: "a" }
+  { flags: "a" },
 );
 
 const successResponseFormat = `${getIPFormat()} :method :url :status :response-time ms :user-agent :date`;
