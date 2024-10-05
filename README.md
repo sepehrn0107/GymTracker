@@ -1,5 +1,6 @@
 # GymTracker
 Application to track workouts
+Note: This application is intented to be mobile first application. A client made with Flutter is used: https://github.com/sepehrn0107/GymTracker_client
 
 # Backend
 ## Getting Started
