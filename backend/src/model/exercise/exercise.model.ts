@@ -1,34 +1,49 @@
 import { Schema, model } from "mongoose";
 import { IExercise } from "../../interface/exercise/exercise.interface";
+import { uuidGenerator } from "../../utils/uuidgenerator";
 
 const exerciseSchema = new Schema<IExercise>({
+  exerciseId: {
+    type: String,
+    default: uuidGenerator,
+    unique: true,
+  },
   userId: {
     type: Schema.Types.ObjectId,
     ref: "User",
-    required: [true, "User ID is required"],
-    unique: true,
-    index: true,
+    unique: false,
   },
   name: {
-    required: true,
+    type: String,
   },
   description: {
-    maxlength: 1000,
+    type: String,
+    maxlength: 500,
     required: false,
   },
   //TODO: Create a solution for selecting bodypart. current idea is to create model. same thing with category
   bodypart: {
     type: Schema.Types.ObjectId,
     ref: "BodyPart",
-    required: [false, "BodyPart not required yet"],
+    required: false,
     unique: true,
     index: true,
   },
   category: {
     type: Schema.Types.ObjectId,
     ref: "BodyPart",
-    required: [false, "BodyPart not required yet"],
+    required: false,
     unique: true,
     index: true,
   },
+  created_at: {
+    type: Date,
+    default: Date.now(),
+  },
+  updated_at: {
+    type: Date,
+    default: Date.now(),
+    required: false,
+  },
 });
+export default model<IExercise>("Exercise", exerciseSchema);

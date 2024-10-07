@@ -24,7 +24,6 @@ export const activateUserSchema = object({
       .email({ message: "Invalid email address" })
       .optional(),
     OTPCode: string({ required_error: "Should have verification code" }),
-    phoneNumber: string({ required_error: "Should have password" }).optional(),
   }),
 });
 export const loginUserSchema = object({
@@ -33,9 +32,6 @@ export const loginUserSchema = object({
       .email({ message: "Invalid email address" })
       .optional(),
     password: string({ required_error: "Should have password" }),
-    phoneNumber: string({
-      required_error: "Should have phoneNumber",
-    }).optional(),
   }),
 });
 export const ForgotPasswordSchema = object({
@@ -43,7 +39,6 @@ export const ForgotPasswordSchema = object({
     email: string({ required_error: "Should have email" })
       .email({ message: "Invalid email address" })
       .optional(),
-    phoneNumber: string({ required_error: "Should have password" }).optional(),
   }),
 });
 export const ResetPasswordSchema = object({
@@ -55,7 +50,6 @@ export const ResetPasswordSchema = object({
       required_error: "Should have password reset code",
     }),
     password: string({ required_error: "Should have password" }),
-    phoneNumber: string({ required_error: "Should have password" }).optional(),
   }),
 });
 export const changeOldPasswordSchema = object({
