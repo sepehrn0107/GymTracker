@@ -21,3 +21,18 @@
  POST /api/auth/register 201 172.926 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 14:35:45 GMT
  POST /api/auth/login 400 1.350 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 14:37:20 GMT 
  POST /api/auth/login 200 160.744 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 14:38:23 GMT
+ POST /api/auth/login 200 199.455 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:25:20 GMT
+ POST /api/auth/register 201 183.686 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:33:34 GMT
+ POST /api/auth/activate 201 82.357 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:33:52 GMT
+ POST /api/auth/login 200 139.513 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:34:18 GMT
+ POST /api/exercise/register 400 1.302 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:35:31 GMT 
+ POST /api/exercise/register 400 1.014 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:36:55 GMT 
+ POST /api/exercise/register 400 0.647 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:37:02 GMT 
+ POST /api/exercise/register 400 10.889 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:37:42 GMT 
+ POST /api/exercise/register 400 10.982 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:39:03 GMT 
+ POST /api/exercise/register 400 11.115 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:39:47 GMT 
+ POST /api/exercise/register 400 0.981 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:39:49 GMT 
+ POST /api/exercise/register 500 28.673 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:41:26 GMT 
+ POST /api/exercise/register 500 23.950 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:43:26 GMT 
+ POST /api/exercise/register 500 9.308 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:47:16 GMT 
+ POST /api/exercise/register 500 30.356 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:50:10 GMT 

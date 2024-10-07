@@ -25,7 +25,7 @@ export const getUserIdFromToken = (req: Request): string | null => {
 
   try {
     // 2. Verify the token and extract the payload (which contains the userID)
-    const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as {
+    const decoded = jwt.verify(token, process.env.JWT as string) as {
       userID: string;
     };
 

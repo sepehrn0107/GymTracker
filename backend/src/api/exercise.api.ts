@@ -6,7 +6,7 @@ import validateSchema from "../middleware/validateSchema.middleware";
 const router = express.Router();
 
 router.post(
-  "/registerexercise",
+  "/register",
   validateSchema(registerExerciseSchema),
   registerExercise
 );

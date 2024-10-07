@@ -61,6 +61,9 @@ export const registerUser = asyncHandler(
     EventEmitterInstance.emit("signup", { code, name, email });
     res
       .status(201)
-      .json({ success: true, message: "Verification code sent to email" });
+      .json({
+        success: true,
+        message: "Verification code sent to email" + code,
+      });
   }
 );

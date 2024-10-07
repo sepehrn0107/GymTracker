@@ -14,6 +14,7 @@ export const registerExercise = asyncHandler(
     res: Response
   ) => {
     const { name, description, bodypart, category } = req.body;
+    console.log("userid from token: ", getUserIdFromToken(req));
     const userObjectId = new mongoose.Types.ObjectId(getUserIdFromToken(req)); // append userobjectid derived from token
     const bodypartObjectId = new mongoose.Types.ObjectId(bodypart); // Convert to ObjectId
     const categoryObjectId = new mongoose.Types.ObjectId(category); // Convert to ObjectId

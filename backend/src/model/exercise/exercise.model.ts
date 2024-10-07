@@ -25,25 +25,19 @@ const exerciseSchema = new Schema<IExercise>({
   bodypart: {
     type: Schema.Types.ObjectId,
     ref: "BodyPart",
-    required: false,
-    unique: true,
-    index: true,
   },
   category: {
     type: Schema.Types.ObjectId,
     ref: "BodyPart",
-    required: false,
-    unique: true,
-    index: true,
   },
   created_at: {
     type: Date,
     default: Date.now(),
+    required: true,
   },
   updated_at: {
     type: Date,
     default: Date.now(),
-    required: false,
   },
 });
 export default model<IExercise>("Exercise", exerciseSchema);
