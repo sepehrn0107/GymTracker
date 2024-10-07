@@ -14,8 +14,9 @@ import {
   forgotPassword,
   resetPasswordHandler,
   login,
+  changePassword,
 } from "../controller/auth/index.auth.controller";
-
+import { AuthJWT } from "../middleware/authJWT.middleware";
 const router = express.Router();
 
 router.post("/register", validateSchema(registerUserSchema), registerUser);
@@ -31,5 +32,11 @@ router.post(
   resetPasswordHandler
 );
 router.post("/login", validateSchema(loginUserSchema), login);
+router.post(
+  "/changePassword",
+  AuthJWT,
+  validateSchema(changeOldPasswordSchema),
+  changePassword
+);
 
 export default router;
