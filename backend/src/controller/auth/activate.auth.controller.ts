@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { activateUserInput } from "../../validation/auth.validation";
-import badRequestError from "../../errors/badRequest.error";
+import BadRequestError from "../../errors/badRequest.error";
 import asyncHandler from "express-async-handler";
 import { findUser } from "../../services/user.services";
 import { createProfile } from "../../services/profile.services";
@@ -20,16 +20,16 @@ export const activateUser = asyncHandler(
     );
 
     if (!user)
-      throw new badRequestError("User does not exist", ErrorCode.BAD_REQUEST);
+      throw new BadRequestError("User does not exist", ErrorCode.BAD_REQUEST);
     if (user.isActive)
-      throw new badRequestError(
+      throw new BadRequestError(
         "User has already been verified",
         ErrorCode.BAD_REQUEST
       );
 
     // Validate OTP code
     if (user.OTPCode !== OTPCode || user.OTPCodeExpires < Date.now()) {
-      throw new badRequestError(
+      throw new BadRequestError(
         "Invalid or expired OTP code",
         ErrorCode.BAD_REQUEST
       );
