@@ -59,7 +59,7 @@ This project utilizes dotenv in order to manage secrets to avoid hard coding. fo
 This sections describes how to create a new model, interface, CRUD operations & API endpoint.
 
 #### Model & Interface (src/model & src/interface) 
-Create a model. This will be a model in the database describing how the data is structures. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
+Create a model. This will be a model in the database describing how the data is structured. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
 https://mongoosejs.com/docs/guide.html
 
     const exampleSchema = new Schema<IExample>({
@@ -76,18 +76,6 @@ In order to utilize Typescript, each model should use an Interface to define the
         name: string,
         ...
     };
-
-#### Validation (src/validation)
-in order to validate incoming data, zod (https://zod.dev/). Zod ensures all user data adheres to the defined rules, helping catch bugs and potential issues before they become critical.
-
-    export const createExampleSchema = object({
-        body: object({
-            name: string({ required_error: "name is required" })
-        }),
-    });
-    export type registerExampleInput = TypeOf<typeof createExampleSchema>["body"]
-
-
 #### Services (src/services)
 Services provide CRUD operations to the model and exports these functions to be used in the application.
 
@@ -99,10 +87,23 @@ Services provide CRUD operations to the model and exports these functions to be 
             return{data: null, success: false, error}
         }
     };
+#### Validation (src/validation)
+in order to validate incoming data, zod (https://zod.dev/). Zod ensures all user data adheres to the defined rules, helping catch bugs and potential issues before they become critical.
+validation can be found under src/validation. follow auth.validation.ts style
+
+    export const createExampleSchema = object({
+        body: object({
+            name: string({ required_error: "name is required" })
+        }),
+    });
+    export type registerExampleInput = TypeOf<typeof createExampleSchema>["body"]
+
+
+
     
 #### Controller (src/controller)
 Main function of controllers are to handle requests from client. controllers use CRUD operations from Services to create functions to be used in endpoints.
-
+API call functions are declared in src/controller. This file handles what each endpoint does. keep a similar file structure: src/controller/example/examplecontroller.ts
     //@desc signup
     //@method POST
     //@access public
@@ -114,3 +115,5 @@ Main function of controllers are to handle requests from client. controllers use
         });
         res.status(201).json({ success: true, message: 'created new Example'});
     });
+Create an endpoint in src/api/example/example.api.ts 
+import exampleSchema and example from validation and controller files
