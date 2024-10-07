@@ -24,7 +24,7 @@ export const registerUser = asyncHandler(
     if (userExists) {
       throw new BadRequestError(
         "User with this email already exists",
-        ErrorCode.BAD_REQUEST,
+        ErrorCode.BAD_REQUEST
       );
     }
 
@@ -61,6 +61,9 @@ export const registerUser = asyncHandler(
     EventEmitterInstance.emit("signup", { code, name, email });
     res
       .status(201)
-      .json({ success: true, message: "Verification code sent to email" });
-  },
+      .json({
+        success: true,
+        message: "Verification code sent to email" + code,
+      });
+  }
 );

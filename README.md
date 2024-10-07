@@ -1,53 +1,58 @@
 # GymTracker
+
 Application to track workouts
 Note: This application is intented to be mobile first application. A client made with Flutter is used: https://github.com/sepehrn0107/GymTracker_client
 
 # Backend
+
 ## Getting Started
-navigate to backend folder and run following command to install needed dependencies and run server: 
+
+navigate to backend folder and run following command to install needed dependencies and run server:
 
     npm install && npm start
+
 note: This project uses mongodb Atlas. in order to connect to database, developers need to be added to database. contact repo owner
 
 ### Project Structure
 
- -    **public/**: This directory stores static files such as images, CSS, and JavaScript files.
- 
--   **src/**: This directory contains all the source code for the application.
+- **public/**: This directory stores static files such as images, CSS, and JavaScript files.
 
--   **api/**: Contains API endpoints or routes and their respective controllers.
+- **src/**: This directory contains all the source code for the application.
 
--   **config/**: Houses configuration files such as Multer, MongoDB connection, cloudinary configuration, etc.
+- **api/**: Contains API endpoints or routes and their respective controllers.
 
--   **controllers/**: Contains feature-specific controllers.
+- **config/**: Houses configuration files such as Multer, MongoDB connection, cloudinary configuration, etc.
 
--   **errors/**: Contains error handling middleware.
+- **controllers/**: Contains feature-specific controllers.
 
--   **loader/**: Contains app.ts and bootstrap.
+- **errors/**: Contains error handling middleware.
 
--   **logs/**: Contains logs from morgan & Winston.
+- **loader/**: Contains app.ts and bootstrap.
 
--   **mails/**: Contains email shell, example OTP email structure.
+- **logs/**: Contains logs from morgan & Winston.
 
--   **interface/**: Stores Typescript interfaces for MongoDB models
+- **mails/**: Contains email shell, example OTP email structure.
 
--   **middleware/**: Houses middleware functions such as JWT authentication.
+- **interface/**: Stores Typescript interfaces for MongoDB models
 
--   **models/**: Contains MongoDB models.
+- **middleware/**: Houses middleware functions such as JWT authentication.
 
--   **Services**/: This are functions that communicate to our database
+- **models/**: Contains MongoDB models.
 
--   **subscriber**/: 
+- **Services**/: This are functions that communicate to our database
 
--   **utils/**: Houses helper functions used throughout the application.
+- **subscriber**/:
+
+- **utils/**: Houses helper functions used throughout the application.
 
 ### .env
+
 This project utilizes dotenv in order to manage secrets to avoid hard coding. for backend, the .env file should be in backend folder with these variables. Note: SMTP not yet implemented
 
     MONGO_DB_URI="mongodb+srv://dbAdmin:<PASSWORD>@gymtracker.5bhmp.mongodb.net/"
     NODE_ENV=development
     PORT=5000
-    
+
     JWT="YOUR_JWT_ACCESS_TOKEN"
     JWT_REFRESH="YOUR_JWT_REFRESH_TOKEN"
     SMTP_PORT=
@@ -56,9 +61,11 @@ This project utilizes dotenv in order to manage secrets to avoid hard coding. fo
     SMTP_PASSWORD=
 
 ### Get started developing
+
 This sections describes how to create a new model, interface, CRUD operations & API endpoint.
 
-#### Model & Interface (src/model & src/interface) 
+#### Model & Interface (src/model & src/interface)
+
 Create a model. This will be a model in the database describing how the data is structured. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
 https://mongoosejs.com/docs/guide.html
 
@@ -76,7 +83,9 @@ In order to utilize Typescript, each model should use an Interface to define the
         name: string,
         ...
     };
+
 #### Services (src/services)
+
 Services provide CRUD operations to the model and exports these functions to be used in the application.
 
     export async function createExample(userData: Partial<IExample>) {
@@ -87,7 +96,9 @@ Services provide CRUD operations to the model and exports these functions to be 
             return{data: null, success: false, error}
         }
     };
+
 #### Validation (src/validation)
+
 in order to validate incoming data, zod (https://zod.dev/). Zod ensures all user data adheres to the defined rules, helping catch bugs and potential issues before they become critical.
 validation can be found under src/validation. follow auth.validation.ts style
 
@@ -98,12 +109,11 @@ validation can be found under src/validation. follow auth.validation.ts style
     });
     export type registerExampleInput = TypeOf<typeof createExampleSchema>["body"]
 
-
-
-    
 #### Controller (src/controller)
+
 Main function of controllers are to handle requests from client. controllers use CRUD operations from Services to create functions to be used in endpoints.
 API call functions are declared in src/controller. This file handles what each endpoint does. keep a similar file structure: src/controller/example/examplecontroller.ts
+
     //@desc signup
     //@method POST
     //@access public
@@ -115,5 +125,56 @@ API call functions are declared in src/controller. This file handles what each e
         });
         res.status(201).json({ success: true, message: 'created new Example'});
     });
-Create an endpoint in src/api/example/example.api.ts 
+
+Create an endpoint in src/api/example/example.api.ts
+
 import exampleSchema and example from validation and controller files
+
+## Endpoints
+
+### user
+
+http://localhost:5000/api/exercise/register
+
+    {
+    "email"  :  "example@example.com",
+
+    "password"  :  "examplePassword1234",
+
+    "confirmPassword"  :  "examplePassword1234",
+
+    "name"  :  "exampleName"
+    }
+    response: {"success": "true", "message": "Verification code sent to email"}
+
+check ur email for OTP code. Currently, OTP code is also printed with the success message.
+
+http://localhost:5000/api/auth/activate
+
+    {
+    "OTPCode"  :  "xxxxxx"  ,
+    "email"  :  "example@example.com"
+    }
+    response: { "message":  "Verified successfully","success":  true }
+
+http://localhost:5000/api/auth/login
+
+        {
+        "email":  "example@example.com",
+        "password":"seven1024"
+        }
+        response:
+        {
+        "success":  true,
+        "user":  {
+        "_id":  "6704378e2011208abea1dfea",
+        "email":  "example@example.com",
+        "name":  "exampleName",
+        "isActive":  true,
+        "createdAt":  "2024-10-07T19:33:34.627Z",
+        "updatedAt":  "2024-10-07T19:33:52.453Z",
+        "__v":  0},
+        "message":  "Logged in successfully",
+        "accessToken":  "bearer token" }
+
+Accesstoken is needed from here to make api calls that require authentication. provide this token as header. if yoy are using Postman, set Auth Type to Bearer Token and provide the given token from this API call
