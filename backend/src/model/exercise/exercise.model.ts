@@ -21,12 +21,12 @@ const exerciseSchema = new Schema<IExercise>({
     maxlength: 500,
     required: false,
   },
-  //TODO: Create a solution for selecting bodypart. current idea is to create model. same thing with category
+  //TODO: Create a solution for selecting bodypart. current idea is to create model. same thing with activityType
   bodypart: {
     type: Schema.Types.ObjectId,
     ref: "BodyPart",
   },
-  category: {
+  activityType: {
     type: Schema.Types.ObjectId,
     ref: "BodyPart",
   },

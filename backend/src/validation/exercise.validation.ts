@@ -16,7 +16,7 @@ export const registerExerciseSchema = object({
       required_error: "Exercise should have a description",
     }).optional(),
     bodypart: objectIdValidation,
-    category: objectIdValidation,
+    activityType: objectIdValidation,
   }),
 });
 export type registerExerciseInput = TypeOf<

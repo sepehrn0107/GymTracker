@@ -17,8 +17,8 @@ export async function findExerciceByName(name: String) {
 export async function findExerciseByBodypart(bp: Schema.Types.ObjectId) {
   return await ExerciseModel.find({ bodypart: bp });
 }
-export async function findExerciseByCategory(ct: Schema.Types.ObjectId) {
-  return await ExerciseModel.find({ category: ct });
+export async function findExerciseByActivityType(ct: Schema.Types.ObjectId) {
+  return await ExerciseModel.find({ activityType: ct });
 }
 export async function createExercise(userData: Partial<IExercise>) {
   try {
