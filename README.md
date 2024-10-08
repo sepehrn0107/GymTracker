@@ -178,3 +178,17 @@ http://localhost:5000/api/auth/login
         "accessToken":  "bearer token" }
 
 Accesstoken is needed from here to make api calls that require authentication. provide this token as header. if yoy are using Postman, set Auth Type to Bearer Token and provide the given token from this API call
+
+### targetArea
+
+http://localhost:5000/api/targetArea/create
+
+    {
+    "name": "ExampleName",
+    "description": "ExampleDescription",
+    "parent": "", // allowed to be empty
+    "children": "" // empty upon creation
+    }
+    response: {"success": "true", "message": "TargetArea created successfully"}
+
+check ur email for OTP code. Currently, OTP code is also printed with the success message.
