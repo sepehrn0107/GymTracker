@@ -42,3 +42,4 @@
  POST /api/exercise/register 400 15.433 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 22:05:42 GMT 
  POST /api/targetArea/create 400 12.057 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 22:33:10 GMT 
  POST /api/targetArea/create 201 66.913 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 22:33:51 GMT
+ POST /api/targetArea/create 201 61.044 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 22:34:48 GMT
