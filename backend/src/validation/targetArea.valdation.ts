@@ -16,9 +16,9 @@ export const registerTargetAreaSchema = object({
     description: string({
       required_error: "Exercise should have a description",
     }).optional(),
-    creator: objectIdValidation,
-    parent: objectIdValidation,
-    children: objectIdValidation,
+    creator: objectIdValidation.optional(),
+    parent: objectIdValidation.optional(),
+    children: objectIdValidation.optional(),
   }),
 });
 export type registeredTargetArea = TypeOf<

@@ -32,9 +32,9 @@ export const registerExerciseSchema = object({
     description: string({ required_error: "Exercise must have a name" })
       .min(6, "name must be more than 6 characters")
       .max(500, "name can be maximum 50 characters"),
+    targetAreaId: objectIdValidation,
+    activityType: objectIdValidation,
   }),
-  targetAreaId: objectIdValidation,
-  activityType: objectIdValidation,
 });
 export type registerExerciseInput = TypeOf<
   typeof registerExerciseSchema

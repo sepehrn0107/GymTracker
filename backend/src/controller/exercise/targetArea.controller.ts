@@ -17,7 +17,19 @@ export const registerTargetArea = asyncHandler(
   ) => {
     const { name, description, parent, children } = req.body;
     const userObjectId = new mongoose.Types.ObjectId(getUserIdFromToken(req));
-    if (parent) {
+    const parentObjectId = parent ? new mongoose.Types.ObjectId(parent) : null;
+    if (!userObjectId) {
+      throw new BadRequestError("User not found", ErrorCode.BAD_REQUEST);
     }
+    await createTargetArea({
+      name: name,
+      description: description,
+      creator: userObjectId,
+      parent: parentObjectId,
+      children: null,
+    });
+    res
+      .status(201)
+      .json({ success: true, message: "TargetArea created successfully" });
   }
 );
