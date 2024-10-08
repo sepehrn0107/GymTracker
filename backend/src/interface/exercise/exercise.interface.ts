@@ -6,7 +6,7 @@ export interface IExercise extends Document {
   name: String;
   description: String;
   bodypart: mongoose.Types.ObjectId;
-  activityType: mongoose.Types.ObjectId;
+  activityType: String;
   created_at: Date;
   updated_at: Date;
 }

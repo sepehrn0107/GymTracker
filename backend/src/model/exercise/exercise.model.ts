@@ -25,10 +25,12 @@ const exerciseSchema = new Schema<IExercise>({
   bodypart: {
     type: Schema.Types.ObjectId,
     ref: "BodyPart",
-  },
+  }, //Weights/bodyweight/cardio/sport ->Select(weights) -> upperback, lowerback, chest, arms, legs -> select arms -> biceps, triceps, grip etc -> select triceps. END
+
   activityType: {
-    type: Schema.Types.ObjectId,
-    ref: "BodyPart",
+    type: String,
+    enum: ["bodyweight", "weight", "resistance", "cardio"],
+    required: true,
   },
   created_at: {
     type: Date,
