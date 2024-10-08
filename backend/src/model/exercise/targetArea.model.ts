@@ -9,6 +9,14 @@ const targetAreaSchema = new Schema<ITargetArea>({
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+    maxlength: 500,
+  },
+  creator: {
+    type: ObjectId,
+    ref: "User",
+  },
   parent: {
     type: ObjectId,
     ref: "TargetArea",
@@ -19,5 +27,9 @@ const targetAreaSchema = new Schema<ITargetArea>({
       ref: "TargetArea",
     },
   ],
+  created_at: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 export default model<ITargetArea>("TargetArea", targetAreaSchema);

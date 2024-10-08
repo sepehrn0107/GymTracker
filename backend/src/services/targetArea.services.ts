@@ -11,10 +11,15 @@ export async function findTargetAreaById(id: String) {
   return await targetAreaModel.findById(id);
 }
 
-export async function findETargetrAreaByName(name: String) {
+export async function findTargetrAreaByName(name: String) {
   return await targetAreaModel.find({ name: name });
 }
-
+export async function findTargetAreaByParentId(id: String) {
+  return await targetAreaModel.find({ parent: id });
+}
+export async function findTargetAreaByCreatorId(id: String) {
+  return await targetAreaModel.find({ creator: id });
+}
 export async function createTargetArea(userData: Partial<ITargetArea>) {
   try {
     const result = await targetAreaModel.create(userData);

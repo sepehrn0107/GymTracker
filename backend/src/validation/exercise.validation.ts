@@ -15,7 +15,7 @@ export const registerExerciseSchema = object({
     description: string({
       required_error: "Exercise should have a description",
     }).optional(),
-    bodypart: objectIdValidation,
+    targetAreaId: objectIdValidation,
     activityType: objectIdValidation,
   }),
 });
