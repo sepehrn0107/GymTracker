@@ -14,11 +14,11 @@ export async function findExerciceById(id: String) {
 export async function findExerciceByName(name: String) {
   return await ExerciseModel.find({ name: name });
 }
-export async function findExerciseByBodypart(bp: Schema.Types.ObjectId) {
-  return await ExerciseModel.find({ bodypart: bp });
+export async function findExerciseByTargetArea(bp: Schema.Types.ObjectId) {
+  return await ExerciseModel.find({ targetArea: bp });
 }
-export async function findExerciseByCategory(ct: Schema.Types.ObjectId) {
-  return await ExerciseModel.find({ category: ct });
+export async function findExerciseByActivityType(ct: Schema.Types.ObjectId) {
+  return await ExerciseModel.find({ activityType: ct });
 }
 export async function createExercise(userData: Partial<IExercise>) {
   try {

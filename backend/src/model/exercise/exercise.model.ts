@@ -21,14 +21,16 @@ const exerciseSchema = new Schema<IExercise>({
     maxlength: 500,
     required: false,
   },
-  //TODO: Create a solution for selecting bodypart. current idea is to create model. same thing with category
-  bodypart: {
+  //TODO: Create a solution for selecting targetArea. current idea is to create model. same thing with activityType
+  targetAreaId: {
     type: Schema.Types.ObjectId,
-    ref: "BodyPart",
-  },
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: "BodyPart",
+    ref: "TargetArea",
+  }, //Weights/bodyweight/cardio/sport ->Select(weights) -> upperback, lowerback, chest, arms, legs -> select arms -> biceps, triceps, grip etc -> select triceps. END
+
+  activityType: {
+    type: String,
+    enum: ["bodyweight", "weight", "resistance", "cardio"],
+    required: true,
   },
   created_at: {
     type: Date,
