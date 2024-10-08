@@ -36,3 +36,6 @@
  POST /api/exercise/register 500 23.950 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:43:26 GMT 
  POST /api/exercise/register 500 9.308 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:47:16 GMT 
  POST /api/exercise/register 500 30.356 ms PostmanRuntime/7.42.0 Mon, 07 Oct 2024 19:50:10 GMT 
+ POST /api/exercise/register 400 16.299 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 15:50:38 GMT 
+ POST /api/exercise/register 400 10.372 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 15:51:26 GMT 
+ POST /api/exercise/register 400 1.015 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 15:51:34 GMT 

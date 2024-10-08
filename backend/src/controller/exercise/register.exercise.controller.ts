@@ -13,7 +13,8 @@ export const registerExercise = asyncHandler(
     req: Request<Record<string, string>, object, registerExerciseInput>,
     res: Response
   ) => {
-    const { name, description, targetAreaId, activityType } = req.body;
+    console.log("hello");
+    const { name, description, targetAreaId } = req.body;
     console.log("userid from token: ", getUserIdFromToken(req));
     const userObjectId = new mongoose.Types.ObjectId(getUserIdFromToken(req)); // append userobjectid derived from token
     const targetAreaObjectId = new mongoose.Types.ObjectId(targetAreaId); // Convert to ObjectId
