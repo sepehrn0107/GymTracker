@@ -134,7 +134,7 @@ import exampleSchema and example from validation and controller files
 
 ### user
 
-http://localhost:5000/api/exercise/register
+http://localhost:5000/api/auth/register
 
     {
     "email"  :  "example@example.com",
@@ -190,5 +190,3 @@ http://localhost:5000/api/targetArea/create
     "children": "" // empty upon creation
     }
     response: {"success": "true", "message": "TargetArea created successfully"}
-
-check ur email for OTP code. Currently, OTP code is also printed with the success message.
