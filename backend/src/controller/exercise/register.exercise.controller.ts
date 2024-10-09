@@ -14,20 +14,22 @@ export const registerExercise = asyncHandler(
     res: Response
   ) => {
     console.log("hello");
-    const { name, description, targetAreaId } = req.body;
-    console.log("userid from token: ", getUserIdFromToken(req));
+    const { name, description, targetAreaId, activityType } = req.body;
     const userObjectId = new mongoose.Types.ObjectId(getUserIdFromToken(req)); // append userobjectid derived from token
     const targetAreaObjectId = new mongoose.Types.ObjectId(targetAreaId); // Convert to ObjectId
     if (!userObjectId) {
       throw new BadRequestError("User not found", ErrorCode.BAD_REQUEST);
     }
-    await createExercise({
+    const createExerciseResult = await createExercise({
       name: name,
       description: description,
       targetAreaId: targetAreaObjectId,
-      //activityType: activityTypeObjectId,
+      activityType: activityType,
       userId: userObjectId,
     });
+    if (!createExerciseResult.success) {
+      console.log("error creating exercise");
+    }
     res
       .status(201)
       .json({ success: true, message: "Exercise created successfully" });

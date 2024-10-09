@@ -25,7 +25,12 @@ export async function createExercise(userData: Partial<IExercise>) {
     const result = await ExerciseModel.create(userData);
     return { data: result, success: true };
   } catch (error) {
-    return { data: null, success: false, error };
+    console.error("Error creating exercise:", error); // Log the error for debugging
+    return {
+      data: null,
+      success: false,
+      error: error instanceof Error ? error.message : "Unknown error",
+    };
   }
 }
 

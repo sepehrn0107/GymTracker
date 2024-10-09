@@ -1,6 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
 export interface IExercise extends Document {
-  exerciseId: String;
   userId: mongoose.Types.ObjectId;
   name: String;
   description: String;

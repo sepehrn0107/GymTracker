@@ -43,3 +43,74 @@
  POST /api/targetArea/create 400 12.057 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 22:33:10 GMT 
  POST /api/targetArea/create 201 66.913 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 22:33:51 GMT
  POST /api/targetArea/create 201 61.044 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 22:34:48 GMT
+ GET / 404 6.078 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Tue, 08 Oct 2024 22:49:56 GMT 
+ GET /favicon.ico 404 0.898 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Tue, 08 Oct 2024 22:49:56 GMT 
+ GET /api 200 0.742 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Tue, 08 Oct 2024 22:50:01 GMT
+ GET /api/ 200 0.479 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Tue, 08 Oct 2024 22:50:05 GMT
+ POST /api/exercise/register 400 9.738 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:11:41 GMT 
+ POST /api/exercise/register 500 3.347 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:11:52 GMT 
+ POST /api/exercise/register 400 0.745 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:11:58 GMT 
+ POST /api/exercise/register 400 10.089 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:12:54 GMT 
+ POST /api/exercise/register 400 1.118 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:13:15 GMT 
+ POST /api/auth/login 200 170.206 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:13:40 GMT
+ POST /api/exercise/register 400 0.723 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:13:54 GMT 
+ POST /api/exercise/register 400 10.147 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:15:09 GMT 
+ POST /api/exercise/register 400 10.031 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:15:23 GMT 
+ POST /api/exercise/register 400 1.050 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:15:26 GMT 
+ POST /api/exercise/register 400 0.921 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:16:23 GMT 
+ POST /api/exercise/register 400 10.455 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:16:53 GMT 
+ POST /api/exercise/register 400 10.394 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:18:28 GMT 
+ POST /api/exercise/register 400 10.704 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:19:56 GMT 
+ POST /api/exercise/register 400 10.162 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:21:41 GMT 
+ POST /api/exercise/register 400 1.011 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:21:43 GMT 
+ POST /api/exercise/register 400 10.256 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:21:56 GMT 
+ POST /api/exercise/register 400 1.061 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:21:56 GMT 
+ POST /api/exercise/register 201 67.261 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:27:37 GMT
+ POST /api/exercise/register 201 58.835 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:28:13 GMT
+ POST /api/exercise/register 201 56.357 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:28:26 GMT
+ POST /api/exercise/register 201 40.297 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:28:30 GMT
+ POST /api/exercise/register 201 44.466 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:28:48 GMT
+ POST /api/auth/login 200 165.798 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:31:43 GMT
+ POST /api/exercise/register 201 39.002 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:31:54 GMT
+ POST /api/exercise/register 201 49.477 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:37:40 GMT
+ POST /api/targetArea/create 201 48.653 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:41:51 GMT
+ POST /api/exercise/register 201 40.379 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:42:19 GMT
+ POST /api/exercise/register 201 40.154 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:42:33 GMT
+ POST /api/exercise/register 201 40.378 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:43:10 GMT
+ POST /api/exercise/register 201 42.325 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:44:05 GMT
+ POST /api/exercise/register 201 56.616 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:44:44 GMT
+ POST /api/exercise/register 201 44.382 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:53:26 GMT
+ POST /api/exercise/register 201 46.025 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:54:03 GMT
+ POST /api/auth/login 200 150.393 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:54:25 GMT
+ POST /api/exercise/register 201 38.380 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:54:35 GMT
+ POST /api/auth/login 200 178.413 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:55:57 GMT
+ POST /api/exercise/register 201 43.480 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:56:17 GMT
+ POST /api/exercise/register 201 39.142 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:56:35 GMT
+ POST /api/exercise/register 201 43.754 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:57:05 GMT
+ POST /api/exercise/register 201 42.677 ms PostmanRuntime/7.42.0 Tue, 08 Oct 2024 23:58:36 GMT
+ POST /api/exercise/register 201 67.876 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:39:49 GMT
+ POST /api/exercise/register 201 40.357 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:40:11 GMT
+ POST /api/exercise/register 400 11.473 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:40:42 GMT 
+ POST /api/exercise/register 400 1.198 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:41:07 GMT 
+ POST /api/exercise/register 201 62.611 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:41:25 GMT
+ POST /api/exercise/register 201 39.013 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:41:51 GMT
+ POST /api/exercise/register 201 39.503 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:42:32 GMT
+ POST /api/exercise/register 201 60.427 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:43:38 GMT
+ POST /api/exercise/register 400 11.670 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:46:54 GMT 
+ POST /api/exercise/register 400 10.732 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:48:17 GMT 
+ POST /api/exercise/register 400 10.237 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:48:53 GMT 
+ POST /api/exercise/register 400 1.121 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:49:47 GMT 
+ POST /api/exercise/register 201 61.103 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:51:33 GMT
+ POST /api/exercise/register 201 39.816 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:51:42 GMT
+ POST /api/exercise/register 201 41.282 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:51:54 GMT
+ POST /api/exercise/register 201 38.520 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:52:13 GMT
+ POST /api/exercise/register 500 61.749 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 00:59:28 GMT 
+ POST /api/exercise/register 201 66.849 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:02:04 GMT
+ POST /api/exercise/register 201 46.533 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:02:19 GMT
+ POST /api/exercise/register 201 68.351 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:02:52 GMT
+ POST /api/exercise/register 201 47.825 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:07:49 GMT
+ POST /api/exercise/register 201 46.899 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:08:51 GMT
+ POST /api/exercise/register 201 48.678 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:11:48 GMT
+ POST /api/exercise/register 201 42.166 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:11:56 GMT
+ POST /api/auth/register 201 169.625 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:12:11 GMT
+ POST /api/auth/register 201 139.188 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 01:12:18 GMT
