@@ -14,9 +14,9 @@ export const registerExercise = asyncHandler(
     res: Response
   ) => {
     console.log("hello");
-    const { name, description, targetAreaId } = req.body;
-    console.log("userid from token: ", getUserIdFromToken(req));
+    const { name, description, targetAreaId, activityType } = req.body;
     const userObjectId = new mongoose.Types.ObjectId(getUserIdFromToken(req)); // append userobjectid derived from token
+    console.log("userobjectID:", userObjectId);
     const targetAreaObjectId = new mongoose.Types.ObjectId(targetAreaId); // Convert to ObjectId
     if (!userObjectId) {
       throw new BadRequestError("User not found", ErrorCode.BAD_REQUEST);
@@ -25,7 +25,7 @@ export const registerExercise = asyncHandler(
       name: name,
       description: description,
       targetAreaId: targetAreaObjectId,
-      //activityType: activityTypeObjectId,
+      activityType: activityType,
       userId: userObjectId,
     });
     res
