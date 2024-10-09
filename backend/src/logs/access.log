@@ -137,3 +137,4 @@
  POST /api/exercise/edit 201 73.592 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:49:38 GMT
  POST /api/exercise/edit 400 11.209 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:55:03 GMT 
  POST /api/exercise/edit 201 95.126 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:55:15 GMT
+ POST /api/exercise/edit 201 99.948 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:59:10 GMT
