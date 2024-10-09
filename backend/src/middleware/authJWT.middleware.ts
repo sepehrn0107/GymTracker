@@ -7,14 +7,9 @@ import { validateEnv } from "../config/env.config";
 import { findExtendedUsers } from "../services/user.services";
 import NotFoundError from "../errors/notFound.error";
 import { IRole } from "../interface/role.interface";
-import { IUser } from "../interface/user.interface";
+import { IUser, UserDataType } from "../interface/user.interface";
 import { extractTokenfromHeader } from "../utils/util";
 
-export interface UserDataType {
-  userId: string;
-  permission?: IRole["permissions"];
-  role?: IRole;
-}
 export interface IUserMessage<TParams = any, TQuery = any, TBody = any>
   extends Request<TParams, TQuery, TBody> {
   userData: UserDataType;
@@ -25,7 +20,7 @@ type ExtendedUser = IUser & {
 export const AuthJWT = (
   req: IUserMessage,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ) => {
   try {
     const jwtconfig = validateEnv()?.jwtconfig;
@@ -33,17 +28,17 @@ export const AuthJWT = (
     if (!token)
       throw new UnAuthenticatedError(
         "Provide token",
-        ErrorCode.TOKEN_NOT_FOUND,
+        ErrorCode.TOKEN_NOT_FOUND
       );
     jwt.verify(token, jwtconfig?.accessSecret, async (err, decoded) => {
       if (err)
         return next(
-          new ForbiddenError("Token expires", ErrorCode?.TOKEN_EXPIRE),
+          new ForbiddenError("Token expires", ErrorCode?.TOKEN_EXPIRE)
         );
       const decodeData = decoded as UserDataType;
-      const userWithPermission = await findExtendedUsers(decodeData?.userId);
-      if (!userWithPermission)
-        throw new NotFoundError("User not found", ErrorCode.NOT_FOUND);
+      // const userWithPermission = await findExtendedUsers(decodeData?.userId);
+      // if (!userWithPermission)
+      //   throw new NotFoundError("User not found", ErrorCode.NOT_FOUND);
       req.userData = {
         userId: decodeData?.userId,
         // permission: userWithPermission?.role?.permissions,

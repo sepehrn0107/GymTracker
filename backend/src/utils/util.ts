@@ -1,4 +1,5 @@
 import { Request } from "express";
+import mongoose, { Types } from "mongoose";
 import jwt from "jsonwebtoken";
 
 export const extractTokenfromHeader = (req: Request) => {
@@ -35,4 +36,16 @@ export const getUserIdFromToken = (req: Request): string | null => {
     console.error("Invalid token", error);
     return null; // Invalid token
   }
+};
+
+export const stringToObjectId = (id: string): Types.ObjectId => {
+  // Check if the id is a valid ObjectId string
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    throw new Error(
+      "Invalid ObjectId: The provided string does not represent a valid ObjectId."
+    );
+  }
+
+  // If valid, return a new ObjectId
+  return new mongoose.Types.ObjectId(id);
 };
