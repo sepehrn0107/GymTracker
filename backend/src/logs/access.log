@@ -119,3 +119,22 @@
  POST /api/exercise/register 201 60.809 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:03:54 GMT
  POST /api/exercise/register 201 78.283 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:11:14 GMT
  POST /api/exercise/register 201 64.868 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:12:18 GMT
+ POST /api/auth/register 201 178.051 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:40:10 GMT
+ POST /api/auth/activate 201 79.364 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:40:28 GMT
+ POST /api/auth/login 200 139.107 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:40:32 GMT
+ POST /api/targetArea/create 201 50.493 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:41:04 GMT
+ POST /api/exercise/register 201 49.963 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:41:26 GMT
+ POST /api/exercise/edit 201 80.376 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:42:11 GMT
+ POST /api/exercise/edit 201 94.979 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:42:54 GMT
+ POST /api/exercise/edit 201 111.039 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:43:07 GMT
+ POST /api/exercise/register 201 46.187 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:43:52 GMT
+ POST /api/exercise/register 201 62.152 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:44:37 GMT
+ POST /api/exercise/edit 201 79.028 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:44:42 GMT
+ POST /api/exercise/edit 201 77.394 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:47:28 GMT
+ POST /api/exercise/edit 201 72.222 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:47:30 GMT
+ POST /api/exercise/edit 201 76.620 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:48:04 GMT
+ POST /api/exercise/edit 201 94.173 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:48:55 GMT
+ POST /api/exercise/edit 201 73.592 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:49:38 GMT
+ POST /api/exercise/edit 400 11.209 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:55:03 GMT 
+ POST /api/exercise/edit 201 95.126 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:55:15 GMT
+ POST /api/exercise/edit 201 99.948 ms PostmanRuntime/7.42.0 Wed, 09 Oct 2024 22:59:10 GMT

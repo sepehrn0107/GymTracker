@@ -1,4 +1,3 @@
-// TODO: TargetArea
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface ITargetArea extends Document {

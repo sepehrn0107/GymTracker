@@ -18,13 +18,12 @@ const exerciseSchema = new Schema<IExercise>({
     unique: false,
     required: true,
   },
-  //TODO: Create a solution for selecting targetArea. current idea is to create model. same thing with activityType
   targetAreaId: {
     type: Schema.Types.ObjectId,
     ref: "TargetArea",
     unique: false,
     required: true,
-  }, //Weights/bodyweight/cardio/sport ->Select(weights) -> upperback, lowerback, chest, arms, legs -> select arms -> biceps, triceps, grip etc -> select triceps. END
+  },
 
   activityType: {
     type: String,

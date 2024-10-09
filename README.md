@@ -177,7 +177,7 @@ http://localhost:5000/api/auth/login
         "message":  "Logged in successfully",
         "accessToken":  "bearer token" }
 
-Accesstoken is needed from here to make api calls that require authentication. provide this token as header. if yoy are using Postman, set Auth Type to Bearer Token and provide the given token from this API call
+Accesstoken is required from here to make api calls that require authentication. provide this token as header. if you are using Postman, set Auth Type to Bearer Token and provide the given token from this API call
 
 ### targetArea
 
@@ -190,3 +190,28 @@ http://localhost:5000/api/targetArea/create
     "children": "" // empty upon creation
     }
     response: {"success": "true", "message": "TargetArea created successfully"}
+
+### exercise
+
+http://localhost:5000/api/exercise/register
+
+    {
+    "name": "",
+    "description": "",
+    "targetAreaId": "",
+    "activityType": ""
+    }
+
+Accesstoken is required to make api calls that require authentication. provide this token as header. if you are using Postman, set Auth Type to Bearer Token and provide the given token from this API call. all fields are required
+
+http://localhost:5000/api/exercise/edit
+
+    {
+    "exerciseId": "",
+    "name": "",
+    "description": "",
+    "targetAreaId": "",
+    "activityType": ""
+    }
+
+Accesstoken is required to make api calls that require authentication. provide this token as header. if you are using Postman, set Auth Type to Bearer Token and provide the given token from this API call. exerciseId is required, rest is optional
