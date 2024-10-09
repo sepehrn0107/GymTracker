@@ -1,13 +1,7 @@
 import { Schema, model } from "mongoose";
 import { IExercise } from "../../interface/exercise/exercise.interface";
-import { uuidGenerator } from "../../utils/uuidgenerator";
 
 const exerciseSchema = new Schema<IExercise>({
-  exerciseId: {
-    type: String,
-    default: uuidGenerator,
-    unique: true,
-  },
   userId: {
     type: Schema.Types.ObjectId,
     ref: "User",
@@ -15,31 +9,36 @@ const exerciseSchema = new Schema<IExercise>({
   },
   name: {
     type: String,
+    unique: false,
+    required: true,
   },
   description: {
     type: String,
     maxlength: 500,
-    required: false,
+    unique: false,
+    required: true,
   },
   //TODO: Create a solution for selecting targetArea. current idea is to create model. same thing with activityType
   targetAreaId: {
     type: Schema.Types.ObjectId,
     ref: "TargetArea",
+    unique: false,
+    required: true,
   }, //Weights/bodyweight/cardio/sport ->Select(weights) -> upperback, lowerback, chest, arms, legs -> select arms -> biceps, triceps, grip etc -> select triceps. END
 
   activityType: {
     type: String,
     enum: ["bodyweight", "weight", "resistance", "cardio"],
+    unique: false,
     required: true,
   },
   created_at: {
     type: Date,
-    default: Date.now(),
-    required: true,
+    default: Date.now,
   },
   updated_at: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 export default model<IExercise>("Exercise", exerciseSchema);
