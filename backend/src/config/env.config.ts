@@ -16,7 +16,6 @@ export const validateEnv = () => {
         refreshaccessSecret: envVars.JWT_REFRESH,
       },
 
-      //TODO: Email verification
       smtp: {
         host: envVars.SMTP_HOST,
         port: envVars.SMTP_PORT,

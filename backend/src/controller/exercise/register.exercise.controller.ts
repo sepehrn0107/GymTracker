@@ -1,15 +1,10 @@
-//TODO Exercise
 import { Request, Response } from "express";
 import BadRequestError from "../../errors/badRequest.error";
 import asyncHandler from "express-async-handler";
 import { createExercise } from "../../services/exercise.services";
 import { ErrorCode } from "../../errors/custom.errors";
 import { registerExerciseInput } from "../../validation/exercise.validation";
-import {
-  extractTokenfromHeader,
-  getUserIdFromToken,
-  stringToObjectId,
-} from "../../utils/util";
+import { stringToObjectId } from "../../utils/util";
 import mongoose from "mongoose";
 import { IUserMessage } from "../../middleware/authJWT.middleware";
 

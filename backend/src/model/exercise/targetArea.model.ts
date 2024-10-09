@@ -1,4 +1,3 @@
-// TODO: TargetArea
 import mongoose, { Schema, Document, model, mongo } from "mongoose";
 import { ITargetArea } from "../../interface/exercise/targetArea.interface";
 

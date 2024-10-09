@@ -40,7 +40,27 @@ export async function updateExerciseById(
   options: QueryOptions = { new: true }
 ) {
   try {
-    const result = await ExerciseModel.findByIdAndUpdate(id, update, options);
+    // Add the updated_at field with the current date
+    const updatedUpdate = {
+      ...update,
+      updated_at: Date.now(), // Set updated_at to the current date
+    };
+
+    const result = await ExerciseModel.findByIdAndUpdate(
+      id,
+      updatedUpdate,
+      options
+    );
+
+    // Check if the exercise was found and updated
+    if (!result) {
+      return {
+        data: null,
+        success: false,
+        error: Error || "Failed to update exercise",
+      };
+    }
+
     return { data: result, success: true };
   } catch (error) {
     return { data: null, success: false, error };

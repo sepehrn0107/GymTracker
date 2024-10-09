@@ -1,4 +1,3 @@
-// TODO: TargetArea
 import { FilterQuery, QueryOptions, Schema, UpdateQuery } from "mongoose";
 import { ITargetArea } from "../interface/exercise/targetArea.interface";
 import targetAreaModel from "../model/exercise/targetArea.model";
