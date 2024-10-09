@@ -128,7 +128,7 @@ API call functions are declared in src/controller. This file handles what each e
 
 Create an endpoint in src/api/example/example.api.ts
 
-import exampleSchema and example from validation and controller files
+import exampleSchema and example from validation and controller files to index.api. remember to add add AuthJWT if user is needed for this endpoint
 
 ## Endpoints
 
