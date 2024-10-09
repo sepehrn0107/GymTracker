@@ -1,30 +1,28 @@
 import { Request, Response } from "express";
 import BadRequestError from "../../errors/badRequest.error";
 import asyncHandler from "express-async-handler";
-import {
-  createTargetArea,
-  findTargetAreaById,
-} from "../../services/targetArea.services";
+import { createTargetArea } from "../../services/targetArea.services";
 import { ErrorCode } from "../../errors/custom.errors";
 import { registeredTargetArea } from "../../validation/targetArea.valdation";
-import { extractTokenfromHeader, getUserIdFromToken } from "../../utils/util";
+import { stringToObjectId } from "../../utils/util";
 import mongoose from "mongoose";
+import { IUserMessage } from "../../middleware/authJWT.middleware";
 
 export const registerTargetArea = asyncHandler(
   async (
-    req: Request<Record<string, string>, object, registeredTargetArea>,
+    req: IUserMessage<Record<string, string>, object, registeredTargetArea>,
     res: Response
   ) => {
     const { name, description, parent, children } = req.body;
-    const userObjectId = new mongoose.Types.ObjectId(getUserIdFromToken(req));
+    const userObjetId = stringToObjectId(req?.userData.userId);
     const parentObjectId = parent ? new mongoose.Types.ObjectId(parent) : null;
-    if (!userObjectId) {
+    if (!userObjetId) {
       throw new BadRequestError("User not found", ErrorCode.BAD_REQUEST);
     }
     await createTargetArea({
       name: name,
       description: description,
-      creator: userObjectId,
+      creator: userObjetId,
       parent: parentObjectId,
       children: null,
     });
