@@ -10,3 +10,8 @@ export interface IUser extends Document {
   passwordResetCode?: string;
   // role: IRole; // Reference to the Role model
 }
+export interface UserDataType {
+  userId: string;
+  // permission?: IRole["permissions"];
+  // role?: IRole;
+}
