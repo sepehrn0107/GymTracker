@@ -1,15 +1,15 @@
 import express from "express";
-import { registerTargetAreaSchema } from "../validation/targetArea.valdation";
-import { registerTargetArea } from "../controller/exercise/index.exercise.controller";
+import { createSessionSchema } from "../validation/session.validation";
+import { registerSession } from "../controller/session/index.session.controller";
 import validateSchema from "../middleware/validateSchema.middleware";
 import { AuthJWT } from "../middleware/authJWT.middleware";
 
 const router = express.Router();
 
 router.post(
-  "/create",
-  validateSchema(registerTargetAreaSchema),
+  "/register",
+  validateSchema(createSessionSchema),
   AuthJWT,
-  registerTargetArea
+  registerSession
 );
 export default router;
