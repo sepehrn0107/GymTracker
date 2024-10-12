@@ -1,10 +1,4 @@
 import { object, string, number, array, Schema } from "zod";
-const rpeSchema = number({ required_error: "RPE is required" })
-  .min(1, "RPE must be at least 1")
-  .max(10, "RPE cannot exceed 10")
-  .refine((value) => value % 0.5 === 0, {
-    message: "RPE must be in 0.5 increments",
-  });
 
 // Set schema
 const setSchema = object({
@@ -12,27 +6,26 @@ const setSchema = object({
     1,
     "Reps must be at least 1"
   ),
-  weight: number().optional(),
-  duration: number().optional(),
-  restTime: number().optional(),
-  rpe: rpeSchema,
+  weight: number({ required_error: "weight" }).optional(),
+  duration: number({ required_error: "duration" }).optional(),
+  restTime: number({ required_error: "rest" }).optional(),
+  rpe: number({ required_error: "Rrpe" }).min(1).max(10).optional(),
 });
 
 // Exercise in Session schema
 const exerciseInSessionSchema = object({
   exerciseId: string({ required_error: "Exercise ID is required" }),
-  sets: array(setSchema).nonempty("At least one set is required"),
+  sets: array(setSchema, { required_error: "At least one set is required" }),
   notes: string().optional(),
 });
 
+// Validation for the session
 export const createSessionSchema = object({
   body: object({
-    userId: string({ required_error: "User ID is required" }),
-    date: string().optional(), // Assuming date is in string format, e.g., ISO format
-    exercises: array(exerciseInSessionSchema).nonempty(
-      "At least one exercise is required"
-    ),
-    totalDuration: number().optional(),
-    notes: string().optional(),
+    exercises: array(exerciseInSessionSchema, {
+      required_error: "Exercises are required",
+    }).nonempty("At least one exercise is required"), // Ensure at least one exercise
+    totalDuration: number().optional(), // Optional total duration field
+    notes: string().optional(), // Optional general notes field
   }),
 });

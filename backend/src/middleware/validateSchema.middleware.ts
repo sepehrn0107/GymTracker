@@ -14,6 +14,7 @@ const validateSchema =
       next(); // Proceed to the next middleware if validation succeeds
     } catch (e: any) {
       // Gather validation error messages
+      console.error("Validation error:", e.errors);
       const message = e.errors.map((err: any) => err.message).join(", ");
       // Return a response with validation errors
       res.status(400).json({ message, success: false });

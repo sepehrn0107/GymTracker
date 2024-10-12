@@ -2,7 +2,7 @@ import express from "express";
 import auth from "./auth.api";
 import exercise from "./exercise.api";
 import targetArea from "./targetArea.api";
-import session from "./exercise.api";
+import session from "./session.api";
 
 const router = express.Router();
 

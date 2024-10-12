@@ -13,8 +13,8 @@ export const registerSession = asyncHandler(
     req: IUserMessage<Record<string, string>, object, ISession>, // Adjust based on your type definitions
     res: Response
   ) => {
-    // Destructure session data from request body
     const { exercises, totalDuration, notes } = req.body;
+
     const userId = stringToObjectId(req.userData.userId); // Extract user ID from request
 
     // Check if userId is provided

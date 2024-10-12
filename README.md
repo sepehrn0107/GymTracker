@@ -215,3 +215,43 @@ http://localhost:5000/api/exercise/edit
     }
 
 Accesstoken is required to make api calls that require authentication. provide this token as header. if you are using Postman, set Auth Type to Bearer Token and provide the given token from this API call. exerciseId is required, rest is optional
+
+http://localhost:5000/api/session/register
+
+    {
+    "exercises": [
+        {
+        "exerciseId": "670707280f24f2f57a92b6f1",
+        "sets": [
+            {
+            "reps": 10,
+            "weight": 50,
+            "duration": 30,
+            "restTime": 60,
+            "rpe": 7.5
+            },
+            {
+            "reps": 8,
+            "weight": 40,
+            "rpe": 6
+            }
+        ],
+        "notes": "Good session on arms."
+        },
+        {
+        "exerciseId": "670707280f24f2f57a92b6f1",
+        "sets": [
+            {
+            "reps": 12,
+            "weight": 30,
+            "rpe": 8
+            }
+        ],
+        "notes": "Felt strong."
+        }
+    ],
+    "totalDuration": 90,
+    "notes": "Great workout overall!"
+    }
+
+exercises are passed as an array inside exercises, with exerciseId as the first element, followed by sets. sets are collected in an array, with sets[0] being the first set, etc. each exercise must have a valid exerciseId, and at least one set

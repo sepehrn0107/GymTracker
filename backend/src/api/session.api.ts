@@ -12,3 +12,4 @@ router.post(
   AuthJWT,
   registerSession
 );
+export default router;
