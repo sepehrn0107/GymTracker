@@ -131,6 +131,7 @@ Create an endpoint in src/api/example/example.api.ts
 import exampleSchema and example from validation and controller files to index.api. remember to add add AuthJWT if user is needed for this endpoint
 
 ## Endpoints
+Note: Swagger is being implemented WIP to structure API documentation 
 
 ### user
 
