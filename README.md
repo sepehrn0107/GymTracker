@@ -1,7 +1,7 @@
 # GymTracker
 
 Application to track workouts
-Note: This application is intented to be mobile first application. A client made with Flutter is used: https://github.com/sepehrn0107/GymTracker_client
+Note: This application is intented to be mobile first application. A client made with Flutter is being developed: https://github.com/sepehrn0107/GymTracker_client
 
 # Backend
 
@@ -9,7 +9,7 @@ Note: This application is intented to be mobile first application. A client made
 
 navigate to backend folder and run following command to install needed dependencies and run server:
 
-    npm install && npm start
+    npm install && npm run dev
 
 note: This project uses mongodb Atlas. in order to connect to database, developers need to be added to database. contact repo owner
 
@@ -47,7 +47,7 @@ note: This project uses mongodb Atlas. in order to connect to database, develope
 
 ### .env
 
-This project utilizes dotenv in order to manage secrets to avoid hard coding. for backend, the .env file should be in backend folder with these variables. Note: SMTP not yet implemented
+This project utilizes dotenv in order to manage secrets to avoid hard coding. for backend, the .env file should be in backend folder with these variables. Note: SMTP is currently implemented with personal email 
 
     MONGO_DB_URI="mongodb+srv://dbAdmin:<PASSWORD>@gymtracker.5bhmp.mongodb.net/"
     NODE_ENV=development
